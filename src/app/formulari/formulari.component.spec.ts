@@ -6,11 +6,9 @@ describe('FormulariComponent', () => {
     let fixture: ComponentFixture<FormulariComponent>;
     let compiled: HTMLElement;
 
-  
-
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FormulariComponent]
+            imports: [FormulariComponent] 
         })
         
         .compileComponents();
@@ -23,13 +21,12 @@ describe('FormulariComponent', () => {
     });
 
     it('Hauriem de tenir 5 inputs', () => {
-        const inputs: NodeListOf<HTMLInputElement> | null= compiled.querySelectorAll('input');
+        const inputs: NodeListOf<HTMLInputElement> = compiled.querySelectorAll('input')!;
         expect(inputs.length).toBe(5);
     });
 
     it('Hauriem de tenir 5 labels', () => {
-        const labels: NodeListOf<HTMLInputElement> | null= compiled.querySelectorAll('labels');
+        const labels: NodeListOf<HTMLLabelElement> = compiled.querySelectorAll('label')!;
         expect(labels.length).toBe(5);
     });
-
 });
