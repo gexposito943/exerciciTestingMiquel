@@ -23,12 +23,12 @@ describe('FormulariComponent', () => {
     });
 
     it('Hauriem de tenir 5 inputs', () => {
-        const inputs:HTMLInputElement|null= querySelectorAll('input');
+        const inputs: NodeListOf<HTMLInputElement> | null= compiled.querySelectorAll('input');
         expect(inputs.length).toBe(5);
     });
 
     it('Hauriem de tenir 5 labels', () => {
-        const labels = fixture.HTML.querySelectorAll('label');
+        const labels: NodeListOf<HTMLInputElement> | null= compiled.querySelectorAll('labels');
         expect(labels.length).toBe(5);
     });
 
