@@ -29,4 +29,11 @@ describe('FormulariComponent', () => {
         const labels: NodeListOf<HTMLLabelElement> = compiled.querySelectorAll('label')!;
         expect(labels.length).toBe(5);
     });
+
+    it('Calcula la lletra del DNI', () => {
+        const dniNumeros = 12345678;
+        const lletraesparada = 'Z';
+        const lletraCalculada = component.calcularLletraDNI(dniNumeros);
+        expect(lletraCalculada).toBe(lletraesparada);
+    });
 });
