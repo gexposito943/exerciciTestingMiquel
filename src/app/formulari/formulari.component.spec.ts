@@ -20,14 +20,14 @@ describe('FormulariComponent', () => {
 
     });
 
-    it('Ha de tenir 5 inputs', () => {
+    it('Ha de tenir 10 inputs', () => {
         const inputs: NodeListOf<HTMLInputElement> = compiled.querySelectorAll('input')!;
-        expect(inputs.length).toBe(5);
+        expect(inputs.length).toBe(10);
     });
 
-    it('Ha de tenir 5 labels', () => {
+    it('Ha de tenir 10 labels', () => {
         const labels: NodeListOf<HTMLLabelElement> = compiled.querySelectorAll('label')!;
-        expect(labels.length).toBe(5);
+        expect(labels.length).toBe(10);
     });
 
     it('Ha de calcular la lletra del DNI', () => {
@@ -41,4 +41,10 @@ describe('FormulariComponent', () => {
         const button: HTMLButtonElement = compiled.querySelector('button')!;
         expect(button).toBeTruthy();
     });
+
+    it('Ha de tenir 5 checkboxes', () => {
+        const checkboxes: NodeListOf<HTMLInputElement> = compiled.querySelectorAll('input[type="checkbox"]')!;
+        expect(checkboxes.length).toBe(5);
+    });
+
 });
