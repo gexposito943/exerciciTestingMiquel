@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormulariComponent } from './formulari.component';
+import { input } from '@angular/core';
 
 describe('FormulariComponent', () => {
     let component: FormulariComponent;
@@ -21,12 +22,12 @@ describe('FormulariComponent', () => {
     });
 
     it('Ha de tenir 10 inputs', () => {
-        const inputs: NodeListOf<HTMLInputElement> = compiled.querySelectorAll('input')!;
+        const inputs = getHtmlElements('input');
         expect(inputs.length).toBe(10);
     });
 
     it('Ha de tenir 10 labels', () => {
-        const labels: NodeListOf<HTMLLabelElement> = compiled.querySelectorAll('label')!;
+        const labels= getHtmlElements('label');
         expect(labels.length).toBe(10);
     });
 
@@ -43,8 +44,12 @@ describe('FormulariComponent', () => {
     });
 
     it('Ha de tenir 5 checkboxes', () => {
-        const checkboxes: NodeListOf<HTMLInputElement> = compiled.querySelectorAll('input[type="checkbox"]')!;
+        const checkboxes = getHtmlElements('input[type="checkbox"]');
         expect(checkboxes.length).toBe(5);
     });
 
+    const getHtmlElements = (elementType: string) => {
+        const logic: NodeListOf<HTMLElement> = compiled.querySelectorAll(`${elementType}`)!
+        return logic;
+    }
 });
