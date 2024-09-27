@@ -10,20 +10,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './formulari.component.css'
 })
 export class FormulariComponent {
-  dniNumeros: string = '';
-  dniLletra: string = '';
-
+  dniNumeros!: string;
     calcularLletraDNI(dniNumeros: number): string {
       const lletres = 'TRWAGMYFPDXBNJZSQVHLCKE';
       const resta = dniNumeros % 23;
       return lletres.charAt(resta);
   }
 
-  onDniInput() {
+  mostrarLletraDni() {
     if (this.dniNumeros.length === 8 && !isNaN(Number(this.dniNumeros))) {
-      this.dniLletra = this.calcularLletraDNI(parseInt(this.dniNumeros, 10));
+      return  this.calcularLletraDNI(parseInt(this.dniNumeros, 10));
     } else {
-      this.dniLletra = '';
+      return '';
     }
   }
 }

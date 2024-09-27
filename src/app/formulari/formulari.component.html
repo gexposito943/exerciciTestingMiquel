@@ -8,16 +8,20 @@
 <body>
 
 <h2>Formulari d'Inscripció - Atletisme</h2>
+<!-- <h3>Los juegos favoritos de {{username}}, edat: {{user2}}</h3>
+<ul>
+  @for(game of games; track game.id){
+    <li (click)="fav(game.name)">{{game.name}}</li>
+  }
+</ul> -->
 
-<form>
-    <fieldset>
+     <fieldset>
         <legend>Dades Identificatives</legend>
-        <label>DNI:</label>
-        <input type="text"> 
-        
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" [(ngModel)]="dniNumeros">
+        <p>Lletra: {{mostrarLletraDni()}}</p>
         <label>Codi de Federació:</label>
         <input type="text">
-        
         <label>Nom i Cognoms:</label>
         <input type="text">
         
@@ -27,16 +31,17 @@
         <label>Email:</label>
         <input type="text">
     </fieldset>
-</form>
+
+ 
 <fieldset>
         <legend>Inscripció</legend>
         <p>Un atleta no es pot inscriure a més de 1200 metres.</p>
         <div class="checkbox-group">
-            <label><input type="checkbox" name="distancies" value="100m llisos"> 100m llisos</label>
-            <label><input type="checkbox" name="distancies" value="200m llisos"> 200m llisos</label>
-            <label><input type="checkbox" name="distancies" value="400m"> 400m</label>
-            <label><input type="checkbox" name="distancies" value="800m"> 800m</label>
-            <label><input type="checkbox" name="distancies" value="1000m"> 1000m</label>
+            <label><input type="checkbox"> 100m llisos</label>
+            <label><input type="checkbox"> 200m llisos</label>
+            <label><input type="checkbox"> 400m</label>
+            <label><input type="checkbox"> 800m</label>
+            <label><input type="checkbox"> 1000m</label>
         </div>
         
         <button type="submit">Inscripció</button>

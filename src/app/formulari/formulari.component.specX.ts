@@ -47,6 +47,9 @@ describe('FormulariComponent', () => {
         const checkboxes = getHtmlElements('input[type="checkbox"]');
         expect(checkboxes.length).toBe(5);
     });
+    it(`It ha d'escriure la lletra del DNi`, () => {
+        
+    })
 
     const getHtmlElements = (elementType: string) => {
         const logic: NodeListOf<HTMLElement> = compiled.querySelectorAll(`${elementType}`)!
