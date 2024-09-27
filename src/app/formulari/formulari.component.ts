@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 })
 export class FormulariComponent {
 
-  calcularLletraDNI(dniNumeros: number): string {
-    const lletres = 'TRWAGMYFPDXBNJZSQVHLCKE';
-    const resta = dniNumeros % 23;
-    return lletres.charAt(resta);
-}
+    calcularLletraDNI(dniNumeros: number): string {
+      const lletres = 'TRWAGMYFPDXBNJZSQVHLCKE';
+      const resta = dniNumeros % 23;
+      return lletres.charAt(resta);
+  }
 }

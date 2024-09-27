@@ -20,20 +20,25 @@ describe('FormulariComponent', () => {
 
     });
 
-    it('Hauriem de tenir 5 inputs', () => {
+    it('Ha de tenir 5 inputs', () => {
         const inputs: NodeListOf<HTMLInputElement> = compiled.querySelectorAll('input')!;
         expect(inputs.length).toBe(5);
     });
 
-    it('Hauriem de tenir 5 labels', () => {
+    it('Ha de tenir 5 labels', () => {
         const labels: NodeListOf<HTMLLabelElement> = compiled.querySelectorAll('label')!;
         expect(labels.length).toBe(5);
     });
 
-    it('Calcula la lletra del DNI', () => {
+    it('Ha de calcular la lletra del DNI', () => {
         const dniNumeros = 12345678;
-        const lletraesparada = 'Z';
+        const lletraEsperada = 'Z';
         const lletraCalculada = component.calcularLletraDNI(dniNumeros);
-        expect(lletraCalculada).toBe(lletraesparada);
+        expect(lletraCalculada).toBe(lletraEsperada);
+    });
+
+    it('Ha de tenir un botó', () => {
+        const button: HTMLButtonElement = compiled.querySelector('button')!;
+        expect(button).toBeTruthy();
     });
 });
